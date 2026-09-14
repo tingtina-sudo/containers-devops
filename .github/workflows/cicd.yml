@@ -120,6 +120,7 @@ jobs:
       # Document: Authenticate into gcloud https://github.com/marketplace/actions/authenticate-to-google-cloud
       # We will use Service Account key JSON to authenticate into gcloud for this project
       - name: Authenticate to Google Cloud
+        if: ${{ false }}
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
@@ -240,6 +241,7 @@ jobs:
       # Completed: Get the GKE credentials so that we can deploy to the cluster
       # Document: Get GKE Credentials https://github.com/marketplace/actions/get-gke-credentials
       - name: Get GKE Credentials
+        if: ${{ false }}
         uses: google-github-actions/get-gke-credentials@v2
         with:
           cluster_name: ${{ env.GCP_CLUSTER_NAME }}
@@ -298,6 +300,7 @@ jobs:
       # Document: Azure Login https://github.com/marketplace/actions/azure-login
       # We will use OpenID Connect to login https://github.com/marketplace/actions/azure-login#login-with-openid-connect-oidc-recommended
       - name: Login to Azure
+        if: ${{ false }}
         uses: azure/login@v2
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
@@ -307,6 +310,7 @@ jobs:
       # Completed: Set AKS context so we that can deploy to the azure cluster
       # Document: Azure Kubernetes set context https://github.com/marketplace/actions/azure-kubernetes-set-context
       - name: Set AKS context
+        if: ${{ false }}
         uses: azure/aks-set-context@v4
         with:
           resource-group: ${{ env.AZ_RESOURCE_GROUP }}
