@@ -234,6 +234,7 @@ jobs:
       # Document: Authenticate into gcloud https://github.com/marketplace/actions/authenticate-to-google-cloud
       # We will use Service Account key JSON to authenticate into gcloud for this project
       - name: Authenticate to Google Cloud
+        if: ${{ false }}
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_SA_KEY }}
